@@ -24,7 +24,7 @@ Before running the application, make sure you have:
 - Ensure prerequisites are installed
 - Allow the script `runApp.sh` to execute
 ```
-chmod +x start.sh
+chmod +x runApp.sh
 ```
 - Run the script 
 ```
