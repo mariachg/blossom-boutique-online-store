@@ -10,6 +10,7 @@ import Cart from './Pages/Cart';
 import bannerClothes from './Components/Assets/heroPinkDress.jpg'; 
 import bannerFragrance from './Components/Assets/p8.jpg'; 
 import bannerSwimwear from './Components/Assets/heroSwimsuit.jpg'; 
+import ScrollToTop from './Pages/ScrollToTop';
 
 
 
@@ -17,6 +18,7 @@ function App() {
   return (
     <div >
       <BrowserRouter>
+      <ScrollToTop />
         <Navbar />
         <Routes>
           <Route path='/' element={<Shop />} />
