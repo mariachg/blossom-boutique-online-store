@@ -23,7 +23,7 @@
 }
 .sidebar-item hover{
     background: #fffff1;
-    transform: translateX(5px); /* Slight movement to the right */
+    transform: translateX(5px); 
 }
 .sidebar-item img {
     widows: 25px;

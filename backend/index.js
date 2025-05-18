@@ -6,13 +6,12 @@ const jwt = require("jsonwebtoken")
 const multer = require("multer")
 const path = require("path")
 const cors = require("cors");
-const { log } = require("console");
 
 app.use(express.json()) // automatically passing through json any requests gotten from response
 app.use(cors()) // the react.js project will connect to the express app on the 4000 port
 
 // Connecting to the MongoDB Database  
-mongoose.connect("mongodb+srv://mariachung:jk0AIkklFKcXDdyA@cluster0.h0kbmiw.mongodb.net/e-commerce")
+mongoose.connect("mongodb://localhost:27017/e-commerce")
 
 // API Creation
 app.get("/", (req, res) => {
@@ -139,7 +138,7 @@ const Users = mongoose.model('Users', {
         type: String,
     },
     cartData: {
-        type:Object, 
+        type: Object,
     },
     date: {
         type: Date,
@@ -156,7 +155,7 @@ app.post('/register', async (req, res) => {
     }
     let cart = {}
     for (let index = 0; index < 300; index++) {
-        cart.set(index, {quantity: 0, size: ""})
+        cart.set(index, { quantity: 0, size: "" })
     }
     //creating user 
     const user = new Users({
@@ -228,56 +227,56 @@ app.get('/toppicks', async (req, res) => {
 const fetchUser = async (req, res, next) => {
     const token = req.header('auth-token')
     if (!token) {
-     res.status(401).send({errors: "Please authenticate using a valid token"})   
+        res.status(401).send({ errors: "Please authenticate using a valid token" })
     }
-    else{
+    else {
         try {
             const data = jwt.verify(token, 'secret_ecom')
             req.user = data.user
             next()
         } catch (error) {
-            res.status(401).send({errors: "Please authenticate using a valid token"})
+            res.status(401).send({ errors: "Please authenticate using a valid token" })
         }
     }
 }
 
 //Endpoint for Adding Products in the Cart
 app.post('/addtocart', fetchUser, async (req, res) => {
-    let userData = await Users.findOne({_id: req.user.id})
+    let userData = await Users.findOne({ _id: req.user.id })
     userData.cartData[req.body.itemid] += 1
-    await Users.findOneAndUpdate({_id: req.user.id}, {cartData:userData.cartData})
-    res.send({message: "Item added"})
+    await Users.findOneAndUpdate({ _id: req.user.id }, { cartData: userData.cartData })
+    res.send({ message: "Item added" })
     console.log(req.body, req.user)
 })
 
 //Endpoint for Removing Products from the Cart
 app.post('/removefromcart', fetchUser, async (req, res) => {
-    console.log("Item Removed" ,req.body.itemid)
-    let userData = await Users.findOne({_id: req.user.id})
-    if(userData.cartData[req.body.itemid]>0)
-    userData.cartData[req.body.itemid] -= 1
-    await Users.findOneAndUpdate({_id: req.user.id}, {cartData:userData.cartData})
-    res.send({message: "Item removed"})
+    console.log("Item Removed", req.body.itemid)
+    let userData = await Users.findOne({ _id: req.user.id })
+    if (userData.cartData[req.body.itemid] > 0)
+        userData.cartData[req.body.itemid] -= 1
+    await Users.findOneAndUpdate({ _id: req.user.id }, { cartData: userData.cartData })
+    res.send({ message: "Item removed" })
 })
 
 //Endpoint for getting the cart data
 app.post('/getcart', fetchUser, async (req, res) => {
     console.log('Get Cart')
-    let userData = await Users.findOne({_id: req.user.id})
+    let userData = await Users.findOne({ _id: req.user.id })
     res.json(userData.cartData)
 })
 
 //Endpoint for Checkout
 app.post('/checkout', fetchUser, async (req, res) => {
     let emptyCart = {}
-    for (let index = 0; index < 300; index++){
+    for (let index = 0; index < 300; index++) {
         emptyCart[index] = 0
     }
     await Users.findOneAndUpdate(
-        {_id: req.user.id}, 
-        {cartData: emptyCart}
+        { _id: req.user.id },
+        { cartData: emptyCart }
     )
-    res.send({message: "Checkout completed"})
+    res.send({ message: "Checkout completed" })
 })
 
 app.listen(port, (error) => {
