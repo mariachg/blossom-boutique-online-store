@@ -1,0 +1,227 @@
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 50px;
+    box-shadow: 0 1px 3px rgb(255, 130, 197);
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+    /* Ensure padding doesn't push beyond width */
+    overflow: scroll;
+    /* how the navbar overflows based on screensize */
+    background-color: #feffef;
+    align-items: center;
+}
+
+.nav-logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.nav-logo p {
+    color: #FCB7C2;
+    font-size: 38px;
+    font-weight: 600;
+}
+
+.nav-menu {
+    display: flex;
+    justify-content: space-around;
+    /* Distribute items evenly */
+    align-items: center;
+    list-style: none;
+    gap: 50px;
+    /* Adjust the gap between menu items */
+    color: #FCB7C2;
+    font-size: 20px;
+    font-weight: 500;
+    margin-right: 50px;
+}
+
+.nav-menu li {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 3px;
+    cursor: pointer;
+}
+
+.nav-menu hr {
+    border: none;
+    width: 80%;
+    height: 3px;
+    border-radius: 10px;
+    background-color: #ABD7E6;
+}
+
+.nav-login-cart {
+    display: flex;
+    align-items: center;
+    gap: 45px;
+
+}
+
+.nav-login-cart button {
+    width: 157px;
+    height: 58px;
+    outline: none;
+    border: 1px solid #FCB7C2;
+    border-radius: 75px;
+    color: #FCB7C2;
+    font-size: 20px;
+    font-weight: 500;
+    background: #ffffff;
+    cursor: pointer;
+}
+
+.nav-login-cart button:active {
+    background: #FDFEE4;
+}
+
+.name-cart-count {
+    width: 22px;
+    height: 22px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: -35px;
+    margin-left: -55px;
+    border-radius: 11px;
+    font-size: 14px;
+    background: #ff6d8c;
+    color: #ffffff;
+
+}
+
+/* fit the images correctly into page */
+.nav-logo img {
+    width: 40px;
+    /* Adjust size of the logo */
+    height: auto;
+    /* Maintain aspect ratio */
+}
+
+.nav-login-cart img {
+    width: 30px;
+    /* Adjust size of cart icon */
+    height: auto;
+    /* Maintain aspect ratio */
+}
+
+.nav-dropdown {
+    display: none;
+}
+
+@media(max-width:1280px) {
+    .nav-logo img {
+        width: 40px;
+    }
+
+    .nav-logo p {
+        font-size: 25px;
+    }
+
+    .nav-menu {
+        gap: 30px;
+        font-size: 16px;
+    }
+
+    .nav-login-cart {
+        gap: 30px;
+    }
+
+    .nav-login-cart button {
+        width: 120px;
+        height: 45px;
+        font-size: 16px;
+    }
+
+    .name-cart-count {
+        margin-left: -40px;
+        font-size: 12px;
+    }
+}
+
+@media (max-width:1024) {
+    .navbar {
+        padding: 12px 30px;
+        flex-direction: column;
+        align-items: stretch;
+        background: #feffef;
+        position: relative;
+        z-index: 1000;
+    }
+
+    .nav-menu {
+        gap: 25px;
+        font-size: 14px;
+       
+    }
+
+    .nav-login-cart button {
+        width: 80px;
+        height: 35px;
+        font-size: 14px;
+    }
+
+    .nav-login-cart img {
+        width: 30px;
+    }
+
+    .nav-cart-count {
+        width: 18px;
+        height: 18px;
+    }
+}
+
+@media (max-width:800px) {
+    .navbar {
+        padding: 10px 0px;
+        flex-direction: column;
+        align-items: flex-start;
+        position: relative;
+        background: #feffef;
+        transition: padding-bottom 0.3s ease;
+
+    }
+
+    .nav-dropdown {
+        display: block;
+        width: 30px;
+        transition: 0.5s;
+        margin: 10px auto;
+        cursor: pointer;
+        margin: 1px 20px 0 0;
+    }
+
+    .nav-menu {
+        display: none;
+        flex-direction: row;
+        gap: 20px;
+        width: 100%;
+        height: 100%;
+        background-color: #feffef;
+        justify-content: center;
+        margin-top: 80px;
+        padding: 10px 0;
+        margin-top: 10px;
+    }
+
+    .nav-menu-visible {
+        display: flex;
+    }
+
+    .nav-login-cart {
+        position: absolute;
+        top: 10px;
+        right: 20px;
+        display: flex;
+        align-items: center;
+        gap: 20px;
+    }
+
+
+}

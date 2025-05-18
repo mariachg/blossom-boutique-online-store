@@ -1,0 +1,35 @@
+.breadcrumb {
+    display: flex;
+    align-items: center;  
+    gap: 8px;
+    color: black;
+    font-size: 16px;
+    font-weight: 600;
+    margin: 60px 170px;
+    text-transform: capitalize;
+  }
+  
+  .breadcrumb img {
+    width: 16px; 
+    height: auto; 
+    margin: 0 5px; 
+    vertical-align: middle;  
+  }
+
+  @media (max-width: 1024px) {
+    .breadcrumb{
+      margin: 20px 30px;
+      font-size: 13px;
+    }
+  }
+
+  @media (max-width: 800px) {
+    .breadcrumb{
+      margin: 30px 10px;
+      font-size: 12px;
+    }
+  }
+  
+
+
+  
