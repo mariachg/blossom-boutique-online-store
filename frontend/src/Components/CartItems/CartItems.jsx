@@ -29,7 +29,7 @@ function CartItems() {
             setCartItems(emptyCart)
         } catch (error) {
             console.error("Chackout failed", error)
-            alert("Checkout failed. Try again. ")
+            alert("Checkout failed. Please login or register ")
         }
     }
 
