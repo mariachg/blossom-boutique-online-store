@@ -155,7 +155,7 @@ app.post('/register', async (req, res) => {
     }
     let cart = {}
     for (let index = 0; index < 300; index++) {
-        cart.set(index, { quantity: 0, size: "" })
+       cart[index] = 0
     }
     //creating user 
     const user = new Users({
