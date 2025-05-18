@@ -1,10 +1,8 @@
 import React, { useEffect, useState } from 'react'
-import './NewCollections.css'
+import './NewArrivals.css'
 import Item from '../Item/Item'
 
-
-
-function NewCollections() {
+function NewArrivals() {
 
   const [newarrivals, setNewArrivals] = useState([])
 
@@ -15,10 +13,10 @@ function NewCollections() {
   }, [])
 
   return (
-    <div className ='new-collections' id="new-arrivals" >
+    <div className ='new-arrivals' id="new-arrivals" >
         <h1>New Arrivals</h1>
         <hr />
-        <div className="collections">
+        <div className="arrivals">
             {newarrivals.map((item, i) => {
                 return<Item key={i} 
                 id={item.id} 
@@ -32,4 +30,4 @@ function NewCollections() {
   )
 }
 
-export default NewCollections
+export default NewArrivals

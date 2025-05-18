@@ -1,4 +1,4 @@
-.new-collections {
+.new-arrivals {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -8,20 +8,20 @@
   
 }
 
-.new-collections h1 {
+.new-arrivals h1 {
     color: #ABD7E6;
     font-size: 50px;
     font-weight: 600;
 }
 
-.new-collections hr {
+.new-arrivals hr {
     width: 200px;
     height: 6px;
     border-radius: 10px;
     background: #FEF5C3;
 }
 
-.collections {
+.arrivals {
     display: grid;
     grid-template-columns:repeat(auto-fit, minmax(220px, 1fr));
     margin-top: 50px;
