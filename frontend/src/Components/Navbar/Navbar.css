@@ -7,9 +7,7 @@
     width: 100%;
     max-width: 100%;
     box-sizing: border-box;
-    /* Ensure padding doesn't push beyond width */
     overflow: scroll;
-    /* how the navbar overflows based on screensize */
     background-color: #feffef;
     align-items: center;
 }
@@ -29,11 +27,9 @@
 .nav-menu {
     display: flex;
     justify-content: space-around;
-    /* Distribute items evenly */
     align-items: center;
     list-style: none;
     gap: 50px;
-    /* Adjust the gap between menu items */
     color: #FCB7C2;
     font-size: 20px;
     font-weight: 500;
@@ -95,20 +91,14 @@
     color: #ffffff;
 
 }
-
-/* fit the images correctly into page */
 .nav-logo img {
     width: 40px;
-    /* Adjust size of the logo */
     height: auto;
-    /* Maintain aspect ratio */
 }
 
 .nav-login-cart img {
     width: 30px;
-    /* Adjust size of cart icon */
     height: auto;
-    /* Maintain aspect ratio */
 }
 
 .nav-dropdown {

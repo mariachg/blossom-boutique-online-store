@@ -21,8 +21,8 @@ width: 280px;
 .item img {
     width: 100%;
     height: auto;
-    object-fit: contain; /* or use 'cover' depending on the effect you want */
-    max-width: 200px;     /* adjust based on your layout */
+    object-fit: contain; 
+    max-width: 200px;   
   }
   .item {
     display: flex;
