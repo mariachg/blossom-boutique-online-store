@@ -10,14 +10,6 @@ function ShopCategory(props) {
     <div className='shop-category'>
       <img className='shopcategory-banner' src={props.banner} alt="" />
 
-      <div className="shopcategory-sort">
-      <select name="Sort" >
-      <option value="default">Sort by</option>
-        <option value="low-high">Price low to high</option>
-        <option value="high-low">Price high to low</option>
-      </select>
-      </div>
-
       <div className="shopcategory-products">
         {all_products.map((item, i) =>{
           if (props.category === item.category) {
