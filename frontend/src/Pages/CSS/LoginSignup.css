@@ -67,18 +67,6 @@ button:hover {
     cursor: pointer;
 }
 
-.loginsignup-agree {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 10px;
-    font-size: 14px;
-}
-
-.loginsignup-agree input {
-    margin-right: 10px;
-}
-
 @media (max-widrh: 800px) {
     .loginsignup-container {
         pad: 20px 30px;
@@ -90,10 +78,5 @@ button:hover {
     .loginsignup-fields input, button{
         font-size: 14px;
         margin-top: 10px;
-    }
-    .loginsignup-agree{
-        font-size: 12px;
-        flex-direction: column;
-        text-align: center;
     }
 }

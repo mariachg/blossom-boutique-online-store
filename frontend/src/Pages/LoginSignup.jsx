@@ -74,10 +74,6 @@ function LoginSignup() {
           ? <p className='loginsignup-login'> Already have an account? <span onClick={() => { setState("Login") }} >Login Here</span> </p>
           : <p className='loginsignup-login'> Create an account? <span onClick={() => { setState("Register") }}>Register here</span> </p>
         }
-        <div className="loginsignup-agree">
-          <input type="checkbox" className="" id="" />
-          <p>By coninuing, I agree to the terms of use & privacy policy. </p>
-        </div>
       </div>
     </div>
   )
