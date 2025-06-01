@@ -14,7 +14,7 @@ Before running the application, make sure you have:
 
 - [Node.js](https://nodejs.org/) (v14+ recommended)
 - [npm](https://www.npmjs.com/)
-- [Docker Desktop](https://www.docker.com/products/docker-desktop) (optional, for running MongoDB locally)
+- [Docker Desktop](https://www.docker.com/products/docker-desktop) (for running MongoDB locally)
 
 ---
 
@@ -30,3 +30,4 @@ chmod +x runApp.sh
 ```
 ./runApp.sh
 ```
+- By default, the frontend and admin panel will start up automatically at port 3000 and 3001 respectively. Both will open in two separate browser tabs.

@@ -6,15 +6,6 @@ command_exists () {
     command -v "$1" >/dev/null 2>&1
 }
 
-echo "Checking if Docker is installed"
-
-if ! command_exists docker; then
-    echo "Docker not found. Installing with Homebrew..."
-    brew install --cask docker
-    echo "Please launch Docker Desktop manually and rerun this script once it's ready."
-    exit 1
-fi
-
 if ! docker info > /dev/null 2>&1; then
     echo "Docker is installed but not running. Please start Docker Desktop and rerun this script."
     exit 1
